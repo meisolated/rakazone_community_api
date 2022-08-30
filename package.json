@@ -5,6 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "pm2": "pm2",
+    "format": "prettier --write \"{src,test}/**/*.{js,ts}\"",
+    "prettier": "prettier",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +22,9 @@
   },
   "homepage": "https://github.com/meisolated/rakazone_community_api#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.3",
+    "prettier": "^2.7.1"
   }
 }
