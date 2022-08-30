@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=dev tsc && node dist/api.js",
-    "start": "NODE_ENV=production tsc && node dist/api.js",
+    "dev": "tsc && NODE_ENV=dev node dist/api.js",
+    "start": "tsc && NODE_ENV=production node dist/api.js",
     "pm2": "pm2",
     "format": "prettier --write \"{src,test}/**/*.{js,ts}\"",
     "prettier": "prettier",

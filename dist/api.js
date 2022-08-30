@@ -6,11 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("dotenv/config");
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
-const port = process.env.NODE_ENV == "dev" ? 5000 : 3001;
-console.log(process.env);
+const port = process.env.NODE_ENV == "dev" ? 5005 : 3005;
 app.get("/", (req, res) => {
     res.send({ nothing: "nothing" });
 });
 app.listen(port, () => {
-    console.log(`Server running on port`);
+    console.log(`Server running on port` + port);
 });
