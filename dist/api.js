@@ -6,12 +6,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("dotenv/config");
 const express_1 = __importDefault(require("express"));
 const hello_1 = __importDefault(require("./routes/hello"));
+const getallposts_1 = __importDefault(require("./routes/getallposts"));
+const createpost_1 = __importDefault(require("./routes/createpost"));
+const vote_1 = __importDefault(require("./routes/vote"));
+const body_parser_1 = __importDefault(require("body-parser"));
 const app = (0, express_1.default)();
+app.use(body_parser_1.default.urlencoded({ extended: false }));
+app.use(body_parser_1.default.json());
 const port = process.env.NODE_ENV == "dev" ? 5005 : 3005;
 app.get("/", (req, res) => {
     res.send({ nothing: "nothing" });
 });
 app.get("/hello", hello_1.default);
+app.get("/getallposts", getallposts_1.default);
+app.post("/createpost", createpost_1.default);
+app.post("/vote", vote_1.default);
 app.listen(port, () => {
     console.log(`Server running on port` + port);
 });

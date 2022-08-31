@@ -1,8 +1,8 @@
 import { Request, Response, Router } from "express"
-const router = Router()
+const hello = Router()
 
-router.get("/hello", (req: Request, res: Response) => {
-    return res.json({ error: 404 })
+hello.get("/hello", (req: Request, res: Response) => {
+    return res.json({ Page : "Hello" })
 })
 
-export default router
+export default hello
